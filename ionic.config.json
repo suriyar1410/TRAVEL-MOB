@@ -1,0 +1,7 @@
+{
+  "name": "travelmob",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
