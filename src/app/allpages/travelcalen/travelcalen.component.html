@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true" class="bgimage">
+
+  <ion-buttons class="float-right">
+    <ion-button fill="solid" style="--background:black; --border-radius: 50%;" (click)="closebtn()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <h1 class="headline">Check <br> Availability</h1>
+
+  <div class="bginside">
+
+    <ion-content class="ion-padding">
+
+    
+      <div class="input-container">
+       
+        <ion-item class="input-item">
+          
+          <ion-input placeholder="From"></ion-input>
+        </ion-item>
+    
+        
+        <ion-item class="input-item">
+          
+          <ion-input placeholder="To"></ion-input>
+        </ion-item>
+    
+        
+        <div class="floating-label">
+          <ion-badge color="success">1L</ion-badge>
+        </div>
+      </div>
+    
+      <ion-datetime style="--background: transparent;border: 2px solid black;border-radius: 25px;"
+      placeholder="Select Date" display-format="DD MMM YYYY" (ionChange)="onDateChange($event)">
+    </ion-datetime>
+    
+  
+
+    <ion-card-content style="display: flex;align-items: center; justify-content: space-evenly;">
+      <p style="font-family: Poppins;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 25px;
+      text-align: left;
+      color: #B9B8B8;"> Persons</p>
+      <ion-item lines="none">
+        <ion-buttons slot="start">
+          <ion-button (click)="decrementAdultCount()">
+            <ion-icon name="remove-outline"></ion-icon>
+          </ion-button>
+          <ion-input [value]="adultCount" readonly class="ion-text-center" style="width: 40px;"></ion-input>
+
+          <ion-button (click)="incrementAdultCount()">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+
+
+      <p>
+        <span
+          style="font-family: Poppins; font-size: 20px; font-weight: 700; line-height: 25px; text-align: left;">RS</span>
+        <span
+          style="font-family: Poppins; font-size: 25px; font-weight: 600; line-height: 37.5px; text-align: left; color: #FFEF66;">
+          {{ totalPrice }}
+        </span>
+      </p>
+    </ion-card-content>
+
+
+    
+
+
+
+    <ion-buttons style="display: flex;align-items: center;justify-content: center;width: 100%;">
+      <ion-button class="book-btn" (click)="bookbtn()" >
+        Book Now
+      </ion-button>
+    </ion-buttons>
+
+
+    </ion-content>
+    
+     
+
+  </div>
+</ion-content>

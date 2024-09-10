@@ -1,0 +1,298 @@
+.bgimage {
+    // --background: url("../../../assets/iPhone\ 13\ mini\ -\ 19.png");
+    // background-repeat: no-repeat;
+    // width: 100%;
+    // height: 100vh; 
+    // font-family: 'Poppins';
+  }
+  
+  .bginside {
+    background-color: white;
+    width: 100%; 
+    height: 70%; 
+    position: absolute; 
+    bottom: 0; 
+    overflow-y: auto; 
+    padding: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .option{
+    font-family: Poppins;font-size: 19px;font-weight: 900;text-align: left;
+  }
+  .headline{
+    font-weight: 700;
+    color: white;
+    top: 15%;
+    margin-left: 17PX;
+    font-size: 25px;
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+  }
+  .float-right {
+    position: absolute;
+    right: 10px; 
+    top: 10px; 
+    z-index: 10; 
+  }
+  .arrow{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    border-radius: 50%;
+    left: 10px;
+    background: #FFFFFF;
+  }
+  .icon-end{
+    position: absolute;
+    top: 10px;
+    justify-content: space-between;
+    right: 20px;
+  }
+
+  .details-link{
+    --background:transparent;
+    color: black;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+
+  // transportcontent
+
+  .transport-content{
+    height: 500px;
+    --overflow: hidden;
+    ion-grid ion-button{
+      color: black;
+      --border-color: black;
+      
+    }
+
+    ion-grid ion-button.light{
+      --background: red;
+    }
+
+
+
+    .selected {
+      color: #00c853 !important; 
+      --border-color: #00c853 !important;   
+      --box-shadow: 0 4px 10px rgba(0, 200, 83, 0.3);
+    }
+
+  }
+
+
+  .gallery-button {
+    position: absolute;
+    top: 27%;
+    right: 1%;
+    transform: translateX(-10%);
+    background-color: #00FF8E;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 5px 5px;
+    cursor: pointer;
+    z-index: 10;
+    font-weight: 600;
+    font-size: 25px;
+}
+  
+
+
+
+
+.vehicle-details{
+  height: 1000px;
+}
+
+
+
+
+//   .package-list {
+//   // padding: 0 16px;
+//   width: 100%;
+// }
+
+// .package-card {
+//   // margin: 16px 0;
+//   // border-radius: 12px;
+//   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+// }
+
+// .pack-head{
+//   width: 100%;
+  
+// }
+// .details-link {
+//   color: var(--ion-color-primary);
+//   cursor: pointer;
+//   text-decoration: none;
+// }
+
+// ion-card {
+//   margin-top: 20px;
+// }
+
+// ion-button {
+//   margin-left: auto;
+// }
+
+// .package-title {
+//   font-size: 1.1rem;
+//   font-weight: bold;
+//   margin: 0;
+//   flex: 1;
+// }
+
+// .bookmark-button {
+//   --ion-color-primary: #ff6347; /* Custom color */
+//   margin-left: auto; /* Push button to the right */
+// }
+
+// .package-description {
+//   font-size: 0.9rem;
+//   color: #666;
+//   margin-top: 8px;
+// }
+
+// .package-actions {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-top: 16px;
+// }
+
+// .package-actions ion-button {
+//   --padding-start: 16px;
+//   --padding-end: 16px;
+//   border-radius: 8px;
+//   font-size: 0.9rem;
+// }
+
+
+
+
+.package-container {
+  margin-top: 20px;
+}
+
+
+.package-card {
+  margin-bottom: 20px;
+}
+
+.package-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+.image-gallery {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.gallery-image {
+  display: block;
+  width: 341px;
+  height: 207px;
+}
+
+/* Modal styling */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  height: 207px;
+  border: 1px solid #888;
+  width: 341px;
+  border-radius: 10px;
+  position: relative;
+
+ 
+
+}
+
+
+
+.close {
+  position: absolute;
+  color: red;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  width: 95%;
+  display: flex;
+  left: 10px;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+
+
+  button{
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-weight: 900;
+    border: none;
+    border-radius: 50%;
+  }
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+}
+
+
+

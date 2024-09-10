@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" class="bgimage">
+  <ion-buttons class="float-right">
+    <ion-button fill="solid" (click)="closebtn()" style="--background:black; --border-radius: 50%;">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <div class="bginside">
+    <h1>cart</h1>
+
+
+    <div class="cart-container">
+      <ion-card *ngFor="let package of cart" style="padding: 1%;gap: 1%;">
+        <ion-item lines="none">
+          <img src="../../../assets/cityscape-singapore (1).png" alt="">
+          <ion-label>
+            <h4><b>{{ package.title }}</b></h4>
+          </ion-label>
+          <ion-button style="border-radius: 50%;--background: #FF0000;color: white;" fill="solid"
+            (click)="removeFromCart(package)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-label style="display: flex; align-items: start; justify-content: space-evenly; flex-wrap: wrap; gap: 1px;">
+          <p style="background-color: #F6F4F4; padding: 3px;"
+            *ngFor="let desc of (package.description ? package.description.split(' • ') : [])">
+            {{ desc }}
+          </p>
+        </ion-label>
+      </ion-card>
+
+      <div class="checkout-section">
+        <ion-button expand="full" style="--background: #00FF8E; color: white;" (click)="checkout()">
+          Proceed to Checkout
+        </ion-button>
+      </div>
+    </div>
+
+
+    <!-- <div class="cart-container">
+      <ion-list>
+        <ion-item *ngFor="let item of cartItems" class="ion-item">
+          <ion-avatar class="custom-avatar">
+            <img [src]="item.image">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+              <ion-note style="color: #EED710;font-weight: 800">{{ item.price | currency }}</ion-note>
+              <ion-button style="color: red;--background: transparent; --border-color: transparent;" fill="outline"
+                (click)="removeFromCart(item)"><ion-icon name="trash"></ion-icon></ion-button>
+            </div>
+          </ion-label>
+
+        </ion-item>
+      </ion-list>
+
+      <div class="cart-summary">
+        <h3>Total: {{ totalAmount | currency }}</h3>
+        <ion-button class="book-btn" expand="full" (click)="checkout()">Book Now
+
+
+        </ion-button>
+      </div>
+    </div> -->
+  
+    <h2>Cart</h2>
+    <div *ngFor="let item of cartItems">
+      <p>Service Type: {{ item.serviceType }}</p>
+      <p>Vehicle: {{ item.vehicle }}</p>
+    </div>
+  
+  </div>
+
+</ion-content>

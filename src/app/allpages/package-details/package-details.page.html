@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true" class="bgimage">
+  <ion-buttons class="float-right">
+    <ion-button (click)="closebtn()" fill="solid" style="--background:black;--border-radius: 50%;">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <div class="bginside">
+    <ul class="package-features">
+      <p><ion-icon name="calendar" style="color: #FDBE01;"></ion-icon> Book now for today</p>
+      <p><ion-icon name="flash" style="color: #FDBE01;"></ion-icon> {{ package?.confirmationType }}</p>
+      <p><ion-icon name="ticket" style="color: #FDBE01;"></ion-icon> {{ package?.entryType }}</p>
+      <p><ion-icon name="time" style="color: #FDBE01;"></ion-icon> {{ package?.validity }}</p>
+      <p><ion-icon name="information-circle" style="color: #FDBE01;"></ion-icon> No cancellation</p>
+
+    </ul>
+
+    <h4 class="section-title">About this package</h4>
+
+    <div class="package-details">
+      <h5 class="section-title">Included</h5>
+      <ul>
+        <p *ngFor="let item of package?.included">
+          <ion-icon style="color: #FDBE01;border: 1px solid #FDBE01;border-radius: 50%;padding: 0.1%;"
+            name="checkmark-outline"></ion-icon>
+          {{ item }}
+        </p>
+      </ul>
+
+      <h5 class="section-title">Not Included</h5>
+      <ul>
+        <p *ngFor="let item of package?.notIncluded">
+          <ion-icon style="color: #FDBE01;" name="close-outline"></ion-icon>
+          {{ item }}
+        </p>
+      </ul>
+
+
+      <h4 class="section-title">Eligibility</h4>
+
+      <ul class="eligibility">
+        <p *ngFor="let item of package?.eligibility">
+          <ion-icon style="color: #FDBE01;" name="ellipse-sharp"></ion-icon>
+          {{ item }}
+        </p>
+      </ul>
+    </div>
+
+
+
+    <h4 class="section-title">Terms and Conditions</h4>
+
+    <ul class="terms-conditions">
+      <p *ngFor="let item of package?.termsConditions">
+        <ion-icon style="color: #FDBE01;" name="ellipse-sharp"></ion-icon> {{ item }}
+      </p>
+    </ul>
+
+  </div>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{ package?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+
+  </div>
+</ion-content> -->

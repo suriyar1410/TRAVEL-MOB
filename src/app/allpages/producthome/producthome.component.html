@@ -1,0 +1,190 @@
+<ion-content [fullscreen]="true" class="bgimage">
+  <img src="../../../assets/Group 17.png" alt="" width="100%" height="100%">
+  <ion-icon class="arrow" name="arrow-back-outline"></ion-icon>
+  <ion-buttons class="icon-end" style="gap: 10px;">
+    <ion-button (click)="navigateToinfoPage()" style="color: white;font-size: 20px;">
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="solid" (click)="goToCart()" style=" --border-radius: 50%;--background: #FFFFFF;color: black;">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <h1 class="headline">Marina Bay Sands Skypark Observation Deck</h1>
+  <button class="gallery-button" (click)="openGallery()"><ion-icon name="images"></ion-icon> Gallery</button>
+
+  <div class="bginside">
+
+    <!-- Modal Popup for Gallery -->
+    <div *ngIf="isGalleryOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeGallery()">&times;</span>
+
+        <img [src]="images[currentImageIndex]" alt="Current Image" class="gallery-image" />
+
+        <div class="gallery-controls">
+          <button (click)="showPreviousImage()" [disabled]="currentImageIndex === 0">
+            <ion-icon name="arrow-back"></ion-icon>
+
+          </button>
+          <button (click)="showNextImage()" [disabled]="currentImageIndex === images.length - 1">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="option">Package option</h1>
+
+    <div class="package-container">
+      <ion-card *ngFor="let package of packages" style="padding: 1%; height: 140px;">
+
+        <ion-item lines="none">
+          <ion-label>
+            <h4><b> {{ package.title }}</b></h4>
+          </ion-label>
+          <ion-button
+            style=" border-radius: 50%;--background: #FFFFFF;color: black; box-shadow: 0px 4px 4px 0px #00000040;  "
+            fill="clear" (click)="bookmarkPackage(package)">
+            <ion-icon fill="solid" name="bookmark-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+
+        <ion-label style=" display: flex; align-items: start; justify-content: space-evenly; flex-wrap: wrap;gap: 1px;">
+          <p style="background-color: #F6F4F4;padding: 3px;"
+            *ngFor="let desc of (package.description ? package.description.split(' • ') : [])">
+            {{ desc }}
+          </p>
+        </ion-label>
+        <ion-card-content>
+          <ion-buttons style="display: flex;align-items: center;justify-content: space-evenly;width: 100%;gap: 20%;">
+            <ion-button class="details-link" (click)="goToPackageDetails(package)">Package Details <ion-icon
+                name="arrow-forward"></ion-icon>
+            </ion-button>
+            <ion-button fill="solid" style="color: white;--background: #00FF8E;"
+              (click)="navigateToProductPage()">SELECT</ion-button>
+          </ion-buttons>
+        </ion-card-content>
+
+
+
+
+
+
+
+
+
+      </ion-card>
+    </div>
+
+
+
+    <h1>Transportation</h1>
+
+
+    <div class="ion-padding transport-content">
+
+      <!-- Service Type -->
+      <div class="service-type">
+        <div style="display: flex;align-items: center;justify-content: space-between;">
+          <h4>Service Type</h4>
+          <p *ngIf="selectedVehicle" (click)="showVehicleDetails()">Package Details <ion-icon
+              name="arrow-forward"></ion-icon></p>
+        </div>
+        <ion-segment [(ngModel)]="serviceType">
+          <ion-segment-button value="oneWay">
+            One Way
+          </ion-segment-button>
+          <ion-segment-button value="twoWay">
+            Two Way
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <!-- Vehicle Type -->
+      <div class="vehicle-type">
+        <h4>Vehicle Type</h4>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Standard Sedan'}" fill="outline"
+                (click)="selectVehicle('Standard Sedan')">
+                <ion-icon name="car"></ion-icon> Standard Sedan
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Business Sedan'}" fill="outline" expand="block"
+                (click)="selectVehicle('Business Sedan')">
+                <ion-icon name="car"></ion-icon> Business Sedan
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Standard Minivan'}" fill="outline" expand="block"
+                (click)="selectVehicle('Standard Minivan')">
+                <ion-icon name="car"></ion-icon> Standard Minivan
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Luxury Minivan'}" fill="outline" expand="block"
+                (click)="selectVehicle('Luxury Minivan')">
+                <ion-icon name="car"></ion-icon> Luxury Minivan
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Minibus (Toyota Hiace)'}" fill="outline"
+                expand="block" (click)="selectVehicle('Minibus (Toyota Hiace)')">
+                <ion-icon name="car"></ion-icon> Minibus <br> <span style="font-size: 12px;">(Toyota Hiace)</span>
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Minibus'}" fill="outline" expand="block"
+                (click)="selectVehicle('Minibus')">
+                <ion-icon name="car"></ion-icon> Minibus
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Coach (35 Seater)'}" fill="outline"
+                expand="block" (click)="selectVehicle('Coach (35 Seater)')">
+                <ion-icon name="car"></ion-icon> Coach (35 Seater)
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button [ngClass]="{'selected': selectedVehicle === 'Coach (45 Seater)'}" fill="outline"
+                expand="block" (click)="selectVehicle('Coach (45 Seater)')">
+                <ion-icon name="car"></ion-icon> Coach (45 Seater)
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="4">
+
+
+            </ion-col>
+            <ion-col size="5">
+              <ion-button fill="outline"
+                style=" --border-color: #00FF8E;color: #000000;font-size: 10px;font-family: 'Poppins';"
+                (click)="addToCart(selectedVehicle)">Add to
+                Cart</ion-button>
+
+            </ion-col>
+            <ion-col size="3">
+
+              <ion-button fill="solid" style="color: white;--background: #00FF8E;"
+                (click)="select()">SELECT</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+    </div>
+
+  </div>
+</ion-content>

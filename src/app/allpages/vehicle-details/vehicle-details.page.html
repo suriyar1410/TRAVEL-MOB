@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" class="bgimage">
+  <ion-buttons class="float-right">
+    <ion-button (click)="closeModal()" fill="solid" style="--background:black;--border-radius: 50%;">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <div class="bginside">
+    <ion-card *ngIf="vehicleDetails">
+      <ion-card-header>
+        <ion-card-title>{{ vehicleDetails?.type }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <h2 class="head-font">Seating Capacity: {{ vehicleDetails?.seatingCapacity }}</h2>
+          
+          <b class="head-font">Important Information:</b>
+          <ul>
+            <li class="para-font" *ngFor="let info of vehicleDetails?.importantInformation">{{ info }}</li>
+          </ul>
+          
+          <b class="head-font">Exclusions:</b>
+          <ul class="para-font">
+            <li *ngFor="let exclusion of vehicleDetails?.exclusions">
+              <ng-container *ngIf="isArray(exclusion)">
+                <ul>
+                  <li *ngFor="let subExclusion of exclusion">{{ subExclusion }}</li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="!isArray(exclusion)">
+                {{ exclusion }}
+              </ng-container>
+            </li>
+          </ul>
+          
+          <b class="head-font">Validity:</b>
+          <p class="para-font">{{ vehicleDetails?.validity }}</p>
+          
+          <b class="head-font">How To Use:</b>
+          <ul class="para-font">
+            <li *ngFor="let use of vehicleDetails?.howToUse">{{ use }}</li>
+          </ul>
+          
+          <b class="head-font">Terms & Conditions:</b>
+          <ul class="para-font">
+            <li *ngFor="let term of vehicleDetails?.termsConditions">{{ term }}</li>
+          </ul>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{ package?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+
+  </div>
+</ion-content> -->

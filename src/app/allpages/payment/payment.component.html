@@ -1,0 +1,170 @@
+<ion-content [fullscreen]="true" class="bgimage">
+
+  <ion-buttons class="float-right">
+    <ion-button (click)="closebtn()" fill="solid" style="--background:black; --border-radius: 50%;">
+      <ion-icon name="close" click="navigatetocalenpage()"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <h1 class="headline">Complete<br> Payment </h1>
+
+  <div class="bginside">
+    <p style="font-family: Poppins;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22.5px;
+    text-align: left;
+    ">Contact info</p>
+
+
+    <ion-card-content style="border: 1px solid black; border-radius: 30px;">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6"
+            style="font-family: Poppins;font-size: 14px;font-weight: 400;line-height: 21px;text-align: left;color: #909090;">Name</ion-col>
+          <ion-col size="6"
+            style="font-family: Poppins;font-size: 18px;font-weight: 700;line-height: 25px;text-align: left;color: black;">Sachin</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col
+            style="font-family: Poppins;font-size: 14px;font-weight: 400;line-height: 21px;text-align: left;color: #909090;"
+            size="6">mobile number</ion-col>
+          <ion-col
+            style="font-family: Poppins;font-size: 18px;font-weight: 700;line-height: 25px;text-align: left;color: black;"
+            size="6">9788686870</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col
+            style="font-family: Poppins;font-size: 14px;font-weight: 400;line-height: 21px;text-align: left;color: #909090;"
+            size="6">email</ion-col>
+          <ion-col
+            style="font-family: Poppins;font-size: 18px;font-weight: 700;line-height: 25px;text-align: left;color: black;"
+            size="6">sachin&#64;gmail.com</ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+    <div style="display: flex;align-items: center;justify-content: space-between;">
+      <p style="font-family: Poppins;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 22.5px;
+    text-align: left;
+    margin-top: 20px;
+    ">Total</p>
+
+      <p style="font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 30px;
+text-align: left;
+color: #EED710;
+">750</p>
+
+    </div>
+
+
+
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Choose Your Payment Method</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Radio Group for Payment Options -->
+        <ion-list>
+          <ion-radio-group [(ngModel)]="selectedPaymentMethod">
+            <!-- PayPal Option -->
+            <ion-item lines="none">
+              <ion-radio slot="start" value="paypal" color="success"></ion-radio>
+              <ion-label>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="10"
+                      style="font-family: Poppins;font-size: 18px;font-weight: 600;line-height: 27px;text-align: left;color: black;">PayPal
+                      <br>
+                      <li
+                        style="font-family: Poppins;font-size: 12px;font-weight: 400;line-height: 18px;text-align: left;color: #909090;">
+                        xxx xxx xxx 875</li>
+                    </ion-col>
+
+                    <ion-col size="2"
+                      style="font-family: Poppins;font-size: 18px;font-weight: 700;line-height: 25px;text-align: left;color: black;"><ion-icon
+                        name="logo-paypal" style="font-size: 1.5rem; color: #003087;"></ion-icon></ion-col>
+
+                  </ion-row>
+
+                </ion-grid>
+
+              </ion-label>
+            </ion-item>
+
+            <!-- Credit Card Option -->
+            <ion-item lines="none">
+              <ion-radio slot="start" value="creditCard" color="success"></ion-radio>
+              <ion-label>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="10">
+                      Credit / Debit card
+                      <br>
+                      <li
+                        style="font-family: Poppins;font-size: 12px;font-weight: 400;line-height: 18px;text-align: left;color: #909090;">
+                        xxx xxx xxx 875</li>
+                    </ion-col>
+                    <ion-col size="2">
+                      <ion-icon name="card" style="font-size: 1.5rem; color: #4CAF50;"></ion-icon>
+                    </ion-col>
+
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="2"><img src="../../../assets/pay.jpg" alt="" style="width: 40px;
+                      height: 15px;
+                      
+                      
+                      border: 1px solid black;
+                      border-radius: 2px;
+                      "></ion-col>
+                    <ion-col size="2"><img src="../../../assets/paypal2.jpg" alt="" style="width: 40px;
+                      height: 14px;
+                      
+                      
+                      border: 1px solid black;
+                     border-radius: 2px;
+                      "></ion-col>
+                    <ion-col size="2"><img src="../../../assets/visa.jpg" alt="" style="width: 30px;
+                      height: 14px;
+                      
+                      border: 1px solid black;
+                    border-radius: 2px;
+                      "></ion-col>
+                    <ion-col size="2"><img src="../../../assets/gpay.jpg" alt="" style="width: 30px;height: 14px;
+                      border: 1px solid black;border-radius: 2px;
+                      "></ion-col>
+                  </ion-row>
+
+                </ion-grid>
+              </ion-label>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+
+
+
+
+
+
+    <ion-buttons style="display: flex;align-items: center;justify-content: center;width: 100%;">
+      <ion-button class="book-btn">
+        Book Now
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+</ion-content>

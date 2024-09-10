@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="bgimage">
+  <ion-buttons class="float-right">
+    <ion-button fill="solid" (click)="closebtn()" style="--background:black;--border-radius: 50%;">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <h1 class="headline">Highlights</h1>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="bginside">
+    <strong>1. Infinity Pool</strong>
+    <p>World-Famous Pool: The SkyPark’s infinity pool is the world’s largest rooftop pool, offering breathtaking
+      panoramic views of the Singapore skyline.</p>
+    <p>Exclusive Access: Note that the pool is only accessible to hotel guests, making it a special experience for those
+      staying at Marina Bay Sands.</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>2. Observation Deck</strong>
+    <p>Stunning Views: The public observation deck, located on the 57th floor, provides sweeping 360-degree views of
+      Singapore, including iconic landmarks like the Gardens by the Bay, the Singapore Flyer, and the Marina Bay
+      waterfront.</p>
+    <p>Photo Opportunities: Perfect for capturing stunning photos of the cityscape, especially at sunset.</p>
+
+    <strong>3. Dining</strong>
+    <p>Sky-High Restaurants: The SkyPark features several high-end dining options, including CÉ LA VI and Spago by
+      Wolfgang Puck, where you can enjoy gourmet meals while taking in the views.</p>
+    <p>Sunset Drinks: The bars are great for enjoying a cocktail while watching the sunset over the city.</p>
+
+    <strong>4. Architecture</strong>
+    <p>Iconic Design: The SkyPark’s unique design, resembling a ship perched atop three towers, is a marvel of modern
+      architecture and engineering.</p>
+    <p>Garden in the Sky: The park also features landscaped gardens with over 250 trees and 650 plants, providing a
+      serene escape above the bustling city.</p>
+
+    <strong>5. Light Shows</strong>
+    <p>Spectra – A Light & Water Show: Visible from the SkyPark, this nightly multimedia show at Marina Bay Sands is a
+      visual feast with water fountains, lasers, and music.</p>
   </div>
+
 </ion-content>
